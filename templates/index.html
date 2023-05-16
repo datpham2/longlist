@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>longlist</title>
+    </head>
+    <body>
+        <ul>
+            {% for book in longlist %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

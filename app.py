@@ -7,10 +7,7 @@ app = Flask(__name__)
 # Connect to database
 db = SQL("sqlite:///longlist.db")
 
+@app.route("/")
 def index():
-    longlist = db.execute("SELECT * FROM longlist")
-    for book in longlist:
-        print(book["title"])
-    return "TODO"
-
-index()
+    longlist = db.execute("SELECT * FROM longlist LIMIT 50")
+    return render_template("index.html", longlist=longlist)
