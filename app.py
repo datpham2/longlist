@@ -9,5 +9,5 @@ db = SQL("sqlite:///longlist.db")
 
 @app.route("/")
 def index():
-    longlist = db.execute("SELECT * FROM longlist LIMIT 50")
+    longlist = db.execute("SELECT * FROM longlist")
     return render_template("index.html", longlist=longlist)
